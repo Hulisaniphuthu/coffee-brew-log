@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  /* Roastery palette - dark roasted-bean base, crema-gold accent,
+     green-coffee secondary accent used sparingly for "fresh/active" states */
+  --color-roast-950: #17110e;
+  --color-roast-900: #1c1512;
+  --color-roast-800: #251c17;
+  --color-roast-700: #332721;
+  --color-roast-600: #4a382f;
+  --color-parchment: #f5efe6;
+  --color-parchment-dim: #b8a99c;
+  --color-crema: #e3b23c;
+  --color-crema-dim: #a97f2a;
+  --color-bean-green: #7c8b5a;
+  --color-danger: #c9634a;
+
+  --font-display: "Fraunces", serif;
+  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+body {
+  background-color: var(--color-roast-950);
+  color: var(--color-parchment);
+  font-family: var(--font-body);
+  background-image:
+    radial-gradient(circle at 15% 0%, rgba(227, 178, 60, 0.07), transparent 45%),
+    radial-gradient(circle at 100% 30%, rgba(124, 139, 90, 0.06), transparent 40%);
+  min-height: 100vh;
+}
+
+::selection {
+  background-color: var(--color-crema);
+  color: var(--color-roast-950);
+}
+
+/* Roast-level bar: maps a 1-5 rating to a shade, used as a signature
+   left-edge stripe on every brew card - like a roast-degree swatch. */
+.roast-bar {
+  background: linear-gradient(180deg, var(--roast-a), var(--roast-b));
+}
